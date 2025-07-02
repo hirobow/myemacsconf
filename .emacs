@@ -27,6 +27,13 @@
     :config
     (leaf-keywords-init)))
 
+;; UI
+;(scroll-bar-mode -1)
+(menu-bar-mode nil)
+(tool-bar-mode 0)
+(setq truncate-lines t)
+(setq truncate-partial-width-windows t)
+
 ;;; ========================================
 ;;; Core Settings
 ;;; ========================================
@@ -43,13 +50,6 @@
   (setq default-buffer-file-coding-system 'utf-8)
   (setq file-name-coding-system 'utf-8)
 
-  ;; UI
-  (scroll-bar-mode -1)
-  (menu-bar-mode -1)
-  (tool-bar-mode 0)
-  (setq truncate-lines t)
-  (setq truncate-partial-width-windows t)
-
   ;; Font
   (set-face-attribute 'default nil
                       :font "HackGen Console NF"
@@ -65,10 +65,7 @@
           (height . 64)
           (background-color . "#224433")
           (foreground-color . "Gray92")
-          (cursor-color . "Yellow")))
-
-  ;; Image support
-  (setq image-types (cons 'svg image-types)))
+          (cursor-color . "Yellow"))))
 
 ;;; ========================================
 ;;; Backup and Auto-save
@@ -179,7 +176,6 @@
 ;; Company - Auto-completion
 (leaf company
   :ensure t
-  :blackout t
   :bind
   ((company-active-map
     ("M-n" . nil)
